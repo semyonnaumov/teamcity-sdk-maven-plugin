@@ -1,4 +1,4 @@
-name: No cache
+name: No cache maven
 on:
   workflow_dispatch:
 jobs:
@@ -17,4 +17,4 @@ jobs:
         distribution: 'temurin'
         java-version: '21'
     - name: Build project
-      run: ./gradlew build --no-daemon -x check
+      run: mvn clean package -DskipTests=true -B
